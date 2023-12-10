@@ -70,6 +70,6 @@ jobs:
           app-name: 'ecogo'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          scm-do-build-during-deployment: true
-          enable-oryx-build: 0
+          scm-do-build-during-deployment: false
+          enable-oryx-build: false
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5B628722E75D479BA199D21D8B3043BF }}
