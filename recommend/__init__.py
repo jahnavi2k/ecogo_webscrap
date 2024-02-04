@@ -34,12 +34,12 @@ tox21_tasks = ['NR-AR',
  'SR-p53']
 
 
-model = dc.models.GraphConvModel(len(tox21_tasks), mode='classification', model_dir='models/tox_pred')
+model = dc.models.GraphConvModel(len(tox21_tasks), mode='classification', model_dir='./recommend/models/tox_pred')
 model.restore()
-cosmetic_rec = joblib.load('models/recommender.sav')
-cosmetic_tfid = joblib.load('models/tfidf_vectorizer.sav')
-food_rec = joblib.load('models/recommender2.sav')
-food_tfid = joblib.load('models/tfidf_vectorizer2.sav')
+cosmetic_rec = joblib.load('./recommend/models/recommender.sav')
+cosmetic_tfid = joblib.load('./recommend/models/tfidf_vectorizer.sav')
+food_rec = joblib.load('./recommend/models/recommender2.sav')
+food_tfid = joblib.load('./recommend/models/tfidf_vectorizer2.sav')
 
 environment_task = ['NR-AhR', 'NR-PPAR-gamma', 'SR-ARE', 'SR-ATAD5', 'SR-HSE', 'SR-MMP', 'SR-p53']
 aquatic_task = ['NR-Aromatase', 'NR-ER', 'NR-ER-LBD', 'NR-PPAR-gamma', 'SR-ARE', 'SR-ATAD5', 'SR-HSE', 'SR-MMP']
@@ -164,6 +164,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
              "This HTTP triggered function executed successfully. Pass the parameters in the query string or in the request body for a personalized response.",
              status_code=200
         )
+
 
 
 
