@@ -28,11 +28,11 @@ jobs:
 
       - name: Create and start virtual environment
         run: |
-          python -m venv venv
-          source venv/bin/activate
+          python -m venv .python_packages
+          source .python_packages/bin/activate
 
       - name: Install dependencies
-        run: pip install --upgrade pip && pip install --target="./.python_packages/lib/site-packages" -r ./requirements.txt
+        run: pip3.9 install --upgrade pip && pip3.9 install --target="./.python_packages/lib/site-packages" -r ./requirements.txt
 
       # Optional: Add step to run tests here
 
