@@ -1,12 +1,11 @@
 import azure.functions as func
-
+import logging
+import json
+import os
+import requests
+from bs4 import BeautifulSoup
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
-    import logging
-    import json
-    import os
-    import requests
-    from bs4 import BeautifulSoup
     logging.info('Python HTTP trigger function processed a request.')
 
     product = req.params.get('product_name')

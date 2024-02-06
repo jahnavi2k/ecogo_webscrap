@@ -4,7 +4,11 @@ import pubchempy as pcp
 from rdkit import Chem
 import requests, json
 import joblib
-
+import logging
+import os
+import json
+import requests
+from bs4 import BeautifulSoup
 
 def get_compound_url(compound_name):
     # fetch PubChem CID for the given compound name
@@ -120,11 +124,7 @@ def get_cluster(product_type, info):
 
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
-    import logging
-    import json
-    import os
-    import requests
-    from bs4 import BeautifulSoup
+  
     logging.info('Python HTTP trigger function processed a request.')
 
     category = req.params.get("category")
